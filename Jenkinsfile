@@ -20,7 +20,7 @@ pipeline
             steps
             {
                 sh " rsync -av * /root/codeigniter  "
-                sh " echo project running "
+                sh " echo new project running "
             
             }
         }
