@@ -11,16 +11,14 @@ pipeline
         {
             steps
             {
-                checkout scm
-                echo "${env.GIT_BRANCH}"
+               sh " git clone https://github.com/AlbinAntony-NetStar/test-code.git  " 
             }
         }
-        stage('Rsync the app  Directory')
+        stage('Rsync to the app  directory')
         {
             steps
             {
-                sh " rsync -av * /root/codeigniter  "
-                sh " echo project running "
+                sh " cd test-code && rsync -av * /root/codeigniter  "
             
             }
         }
