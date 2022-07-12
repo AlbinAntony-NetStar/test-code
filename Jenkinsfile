@@ -11,9 +11,18 @@ pipeline
         {
             steps
             {
-               sh " cd test-code && git pull  " 
+               sh " git clone https://github.com/AlbinAntony-NetStar/test-code.git  " 
             }
         }
+
+        stage('Backup Doc')
+        {
+            steps
+            {
+               sh " cp -r /root/codeigniter /root/backup/codeigniter.$(date +"%Y%m%d_%H%M%S") " 
+            }
+        }
+
         stage('Rsync to the app  directory')
         {
             steps
@@ -25,3 +34,4 @@ pipeline
         
     }
 }
+
