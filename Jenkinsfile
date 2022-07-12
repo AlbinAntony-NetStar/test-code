@@ -11,7 +11,7 @@ pipeline
         {
             steps
             {
-               sh " git clone https://github.com/AlbinAntony-NetStar/test-code.git  " 
+               sh " cd test-code && git pull  " 
             }
         }
 
