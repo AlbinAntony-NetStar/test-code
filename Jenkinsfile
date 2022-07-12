@@ -15,7 +15,7 @@ pipeline
                 echo "${env.GIT_BRANCH}"
             }
         }
-        stage('Rsync the app  directory')
+        stage('Rsync the app  Directory')
         {
             steps
             {
