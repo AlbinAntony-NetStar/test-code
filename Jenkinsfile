@@ -21,6 +21,7 @@ pipeline
             steps
             {
                 sh " cp -r /root/codeigniter/ /root/backup/codeigniter.${BUILD_NUMBER} " 
+                sh " echo project running "
             }
         }
 
