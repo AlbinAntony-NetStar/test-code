@@ -11,7 +11,8 @@ pipeline
         {
             steps
             {
-               sh " cd test-code && git pull  " 
+                checkout scm
+                echo "${env.GIT_BRANCH}"
             }
         }
 
@@ -19,7 +20,7 @@ pipeline
         {
             steps
             {
-               sh " cp -r /root/codeigniter /root/backup/codeigniter " 
+               sh " cp -r /root/codeigniter/ /root/backup/codeigniter.$(date +"%Y%m%d_%H%M%S") " 
             }
         }
 
@@ -27,7 +28,7 @@ pipeline
         {
             steps
             {
-                sh " cd test-code && rsync -av * /root/codeigniter  "
+                sh " rsync -av * /root/codeigniter  "
             
             }
         }
