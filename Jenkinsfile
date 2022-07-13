@@ -20,7 +20,7 @@ pipeline
         {
             steps
             {
-               sh " cp -r /root/codeigniter/ /root/backup/codeigniter.\$(date +"%Y%m%d_%H%M%S") " 
+                sh " cp -r /root/codeigniter/ /root/backup/codeigniter.${date +"%Y%m%d_%H%M%S"} " 
             }
         }
 
